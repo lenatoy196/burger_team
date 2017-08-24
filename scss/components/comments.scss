@@ -1,0 +1,98 @@
+/*
+* comments section
+*/
+.comments {
+    width: 100%;
+}
+
+.comments__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: stretch;
+    height: 100%;
+}
+
+.comments__item {
+    overflow: hidden;
+    height: 50%;
+    width: 25%;
+    position: relative;
+    
+
+    &:hover .comments__textblock{
+        opacity: 1;
+        background-color: rgba(20,20,20,0.7);
+    }
+
+    @include tablets {
+        width: 50%;
+        height: 25vh;
+    }
+}
+
+.comments__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: grayscale(100%);
+
+    @include tablets {
+        width: 50%;
+        object-fit: cover;
+    }
+
+}
+
+.comments__name {
+    @include gagalin;
+    text-transform: uppercase;
+    margin-bottom: rem(20px);
+
+    @include phones {
+        font-size: rem(24px);
+    }
+}
+
+.comments__text {
+    margin-bottom: rem(20px);
+    @include ubuntu(300);
+    line-height: rem(24px);
+
+    @include phones {
+        display: none;
+    }
+}
+
+.comments__btn {
+    @extend %btn;
+    background-color: $dark-grey;
+    
+    &:hover {
+        background-color: darken($dark-grey, 10%);      
+    }
+}
+
+.comments__textblock {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: rem(47px) rem(20px);
+    transition: opacity 0.5s;
+
+
+    @include tablets {
+        padding: rem(35px) rem(20px);
+        text-align: center;
+    }
+
+    @include phones-small {
+        padding: rem(15px) rem(10px);
+    }
+}
+

@@ -1,0 +1,18 @@
+/*delivery*/
+
+.delivery {
+    background: url('../img/background/delivery.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    align-items: center;
+}
+
+.delivery__content {
+    display: flex;
+    flex-direction: column;
+
+    @include tablets {
+        text-align: center;
+    }
+
+}
+

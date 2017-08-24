@@ -1,0 +1,120 @@
+.ingredients {
+    position: absolute;
+    top: rem(90px);
+    left: 0;
+
+    @include tablets {
+        left: 15%;
+        top: rem(130px);
+    }
+
+    @include phones {
+        left: 0;
+        top: rem(50px);
+    }
+}
+
+.ingredients__menu {
+    background-color: rgba(227, 80, 40, 0.4); 
+    width: rem(90px);
+    height: rem(90px);
+    border-radius: rem(5px);
+    padding: rem(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.ingredients__caption {
+    @include gagalin;
+    font-size: rem(14px);
+    text-align: center;
+
+    &:before {
+        content: "";
+        display: block;
+        background: url('../img/icon/burger.svg') 50% 50% no-repeat;
+        background-size: contain;
+        height: rem(40px);
+        width: rem(50px);
+        margin-bottom: rem(10px);
+
+    }
+}
+
+.ingredients__table {
+    opacity: 0;
+    transition: all 0.5s;
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    left: rem(90px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    z-index: 200;
+    color: $dark-grey;
+    @include ubuntu(300);
+    width: rem(270px);
+    padding: 20px;
+    table-layout: fixed;
+
+    & td {
+        padding: rem(5px);
+
+        &:first-child {
+            padding: 0 rem(5px);
+            width: rem(70px);
+            
+            & + td {
+                font-weight: 500;
+                width: rem(110px);
+            }
+        }
+
+        &:last-child {
+            text-align: right;
+            width: rem(50px);
+        }
+    }
+}
+
+.ingredients__icon {
+    width: rem(40px);
+    height: rem(40px);
+
+    &--beef {
+        fill: $red;
+    }
+
+    &--buns {
+        fill: $yellow;
+    }
+
+    &--salad {
+        fill: $green;
+    }
+
+    &--sauce {
+        fill: $red;
+    }
+
+    &--cucumber {
+        fill: $green;
+    }
+
+    &--cheese {
+        fill: $yellow;
+    }
+
+}
+
+
+    .ingredients__menu:hover {
+        background-color: rgba(227, 80, 40, 1);
+        
+        & + .ingredients__table {
+            opacity: 1;
+        }
+    }

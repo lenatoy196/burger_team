@@ -1,0 +1,80 @@
+
+
+@function rem($px) {
+    @return $px / 16px+0rem;
+}
+
+@mixin circle($width, $color) {
+    width: $width;
+    height: $width;
+    border-radius: $width/2;
+    background-color: $color;
+}
+
+@mixin ubuntu($weight) {
+    font-family: ubuntu, Verdana, Arial, sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+@mixin lifehack {
+    font-family: lifehack, cursive;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin gagalin {
+    font-family: gagalin, cursive;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+
+
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+
+@mixin phones-small {
+    @media screen and (max-width: $phones-small) {
+        @content;
+    }
+}
+
+%section {
+    /*min-height: 100vh;*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+%btn {
+    display: inline-block;
+    font-family: ubuntu, Verdana, Arial, sans-serif;
+    font-size: rem(13px);
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: $white;
+    padding: rem(3px) rem(16px);
+    line-height: rem(30px);
+    border-radius: rem(5px);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        background-color: darken($red, 10%);
+        
+    }
+
+}
